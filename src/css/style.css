@@ -3,9 +3,7 @@ body {
 }
 /* Main */
 
-.container-fluid{
-    padding:0px 50px;
-}
+
 
 /* header css */
 
@@ -92,6 +90,7 @@ cursor: pointer;
     height:50px;
     display: flex;
     align-items: center;
+     border-bottom: 1px solid lightgray;
    
 }
 
@@ -111,7 +110,7 @@ cursor: pointer;
 
 .Fre-Inter{
     font-size:11pt;
-    color:rgb(66, 66, 66);
+    color:black;
     text-align: end;
     font-weight: bold;
 }
@@ -128,11 +127,74 @@ cursor: pointer;
 }
 .navbar ul li{
     height:100%;
-      color:rgb(66, 66, 66);
-      font-size:11pt;
+    font-size:11pt;
 }
 .navbar ul li a{
-
-    color:lightgray;
+    color:rgb(66, 66, 66);
+    cursor: pointer;
+    text-decoration: none;
     cursor: pointer;
 }
+.navbar ul li a:hover{
+    color:rgb(255, 138, 3);
+}
+
+/* AsideBar */
+
+aside{
+    width:19vw;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    background-color: white;
+    box-shadow: 2px 2px 15px gray;
+    transition: all 0.2s ease;
+    z-index: 1000;
+}
+.closeAside{
+   width:19vw;
+    height:100vh;
+    position: absolute;
+    top:0;
+    left:-20vw;
+    background-color: white;
+    box-shadow: 2px 2px 15px gray;
+    padding: 10px;
+    transition: all 0.2s ease;
+}
+aside .head{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+}
+aside .head span{
+    font-size: 11pt;
+    font-weight: bold;
+    color:rgb(66, 66, 66);
+}
+aside ul{
+    list-style: none;
+    padding:10px 0;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+aside ul li{
+    padding:6px 10px;
+    transition: all 0.3s ease;
+}
+aside ul li a{
+    text-decoration: none;
+    font-size:10pt;
+    color:rgb(66, 66, 66);
+}
+aside ul li:hover{
+    background-color:rgb(233, 233, 233);
+}
+
+
+/* slider */

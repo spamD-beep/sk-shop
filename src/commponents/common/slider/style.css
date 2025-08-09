@@ -1,0 +1,52 @@
+
+
+
+
+
+
+
+.w-full{
+    border-radius: 20px;
+}
+.swiper-button-prev, .swiper-rtl .swiper-button-next {
+    background: lightgray;
+    color: black;
+    left: var(--swiper-navigation-sides-offset, 20px);
+    right: auto;
+    border-radius: 50%;
+    color:black;
+    width:40px;
+    height:40px;
+    box-shadow: 2px 2px 15px black;
+}
+.swiper-button-prev:after, .swiper-button-next:after {
+    font-family: swiper-icons;
+    font-size: 12pt;
+    text-transform: none !important;
+    color:black;
+    font-weight: bold;
+    
+}
+
+.swiper-button-next, .swiper-rtl .swiper-button-prev {
+    right: var(--swiper-navigation-sides-offset, 20px);
+    left: auto;
+}
+.swiper-button-prev, .swiper-button-next {
+    position: absolute;
+    top: var(--swiper-navigation-top-offset, 50%);
+   
+    margin-top: calc(0px - (var(--swiper-navigation-size) / 2));
+    z-index: 10;
+    cursor: pointer;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    color: black;
+     width:40px;
+    height:40px; 
+  border-radius: 50%;
+     box-shadow: 2px 2px 15px black;
+  background-color: lightgray;
+}
