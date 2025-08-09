@@ -123,16 +123,129 @@ cursor: pointer;
  list-style-type: none;
  display: flex;
  align-items: center;
+ justify-content: center;
  gap:13px;
  margin-bottom:0px;
 }
 .navbar ul li{
     height:100%;
+    width:100%;
       color:rgb(66, 66, 66);
       font-size:11pt;
+      display: flex;
+      justify-content: space-between;
 }
 .navbar ul li a{
-
-    color:lightgray;
+    text-decoration: none;
+    color:rgb(66, 66, 66);
     cursor: pointer;
 }
+
+/* Aside */
+/* Main Sidebar Container */
+.aside {
+  width: 300px;
+  background-color:white;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+  height: 100vh;
+  overflow-y: auto;
+  font-family: 'Segoe UI', sans-serif;
+  position: absolute;
+  left: 0;
+  top: 0;
+
+}
+
+/* Header Section */
+.aside .head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.aside .head span {
+  font-size: 18px;
+  color: #333;
+}
+
+/* UL Reset */
+.aside ul {
+  list-style: none;
+  padding-left: 10px;
+  margin: 0;
+}
+
+/* List Items */
+.aside li {
+  margin: 6px 0;
+  position: relative;
+}
+
+/* Link Style */
+.aside li a {
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.aside li a:hover {
+  color: #007bff;
+}
+
+/* Plus Icon Style */
+.aside li svg {
+  margin-left: 8px;
+  font-size: 14px;
+  color: #777;
+  cursor: pointer;
+  vertical-align: middle;
+  position: absolute;
+  right:0;
+}
+
+/* Indentation for children */
+.aside ul ul {
+  margin-left: 15px;
+  margin-top: 5px;
+  padding-left: 10px;
+}
+
+/* .aside{
+    width:43vh;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color:white ;
+    height:100vh;
+    overflow: auto;
+}
+.head{
+    display: flex;
+    width:100%;
+    justify-content:space-between;
+    padding:10px;
+    border-bottom: 1px solid lightgray;
+    align-items: center;
+} */
+
+/* .aside ul{
+    list-style: none;
+    padding:10px;
+}
+.aside ul li{
+    display: flex;
+    justify-content: space-between;
+}
+.aside ul li a{
+    text-decoration: none;
+    color:rgb(66, 66, 66)
+}
+.aside ul ul{
+    margin-right:20px;
+} */
