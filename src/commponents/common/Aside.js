@@ -1,86 +1,88 @@
-import React from 'react';
-import '../../css/style.css';
-import { Link } from 'react-router-dom';
+
+import React from 'react'
+import '../../css/style.css'
 import { IoClose } from "react-icons/io5";
-import { FaRegPlusSquare } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 
-const Aside = () => {
+const Aside = ({open,close}) => {
 
-    const aside=[
-        {
-            label:"Fashion",
-            path:"/Fashion",
-            children:[
-                {
-                    label:"Apparel",
-                    path:"/Apparel",
-                    children:[
-                        {
-                            label:"Smart Tablet",
-                            path:"/smartTablet" 
-                        },
-                        {
-                            label:"Crepe T-Shirt",
-                            path:"/crepe-t-shirt"
-                        },
-                        {
-                            label:"Leather Watch",
-                            path:"/leatherWatch"
-                        },
-                        {
-                            label:"Rolling Diamond",
-                            path:"/rollingDiamond"
-                        }
-                    ]
-                },
-                {
-                    label:"Outerwear",
-                    path:"/Outerwear"
-                },
-                {
-                    label:"Footwear",
-                    path:"/Footwear"
-                }
-            ]
-        },
-        {
-            label:"Jewelery",
-            path:"/Jewelery"
-        },
-        {
-            label:"Watches",
-            path:"/watches"
-        }
-    ]
-    const renderMenu=(items)=>{
-        return(
-            <ul>
-      {
-        items.map((item,index)=>{
-            return(
-        <li  key={index}><Link to={item.path}>{item.label}</Link>
-        {item.children && (
-            <>
-                     <FaRegPlusSquare /> 
-                     {renderMenu(item.children)}
-         </>
-        )}
-        </li>
-            )
-        })
-      }
-      </ul>
-        )
-    }
+  const aside=[
+    {
+      label:"Fashion",
+      path:"/fashion"
+    },
+    {
+      label:"Jewelery",
+      path:"/jewelery"
+    },
+    {
+      label:"Watches",
+      path:"/watches"
+    },
+    {
+      label:"Outerwear",
+      path:"/outerwear"
+    },
+    {
+      label:"Cosmetics",
+      path:"/cosmetics"
+    },
+    {
+      label:"Accessories",
+      path:"/asseccories"
+    },
+    {
+      label:"Electronic",
+      path:"/electronic"
+    },
+    {
+      label:"Furniture",
+      path:"/furniture"
+    },
+    {
+      label:"Sunglasses",
+      path:"/asseccories"
+    },
+    {
+      label:"Rolling Diamond",
+      path:"/rolling-diamond"
+    },
+    {
+      label:"Xbox Controller",
+      path:"/Xbox-Controller"
+    },
+    {
+      label:"Leather Watches",
+      path:"/Leather-Watches"
+    },
+    {
+      label:"Smart Tablet",
+      path:"/Xbox-Controller"
+    },
+    {
+      label:"Purse",
+      path:"/purse"
+    },
+    {
+      label:"Sunglasses",
+      path:"/sunglasses"
+    },
+  ]
+
   return (
-    <div className='aside'>
-    <div className='head'>
-        <span style={{ fontWeight:"bold",color:"rgb(66, 66, 66);"}}>Shop By Categories</span>
-        <IoClose style={{fontSize:"15pt"}} />
+    <aside className={`${open ? "closeAside":"aside"}`}>
+        <div className='head'>
+            <span>Shop By Categories</span>
+            <IoClose onClick={close} style={{ fontSize:"15pt",color:"rgb(66,66,66)",cursor:"pointer" }} />
         </div>
-      {renderMenu(aside)}
-    </div>
+        <ul>
+          {aside.map((aside,index)=>(
+
+          <li key={index}><Link to={aside.path}>{aside.label}</Link></li>
+          ))}
+        </ul>
+    </aside>
   )
 }
 
