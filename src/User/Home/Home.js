@@ -6,11 +6,16 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import "../../css/style.css"
 import ProductSlider from '../../commponents/common/productSlider/ProductSlider';
-import banner1 from '../../assets/img/banner1.jpg'
-import banner2 from '../../assets/img/banner2.png'
-import banner3 from '../../assets/img/banner3.jpg'
-import banner4 from '../../assets/img/banner4.jpg'
 import LatestProduct from '../../commponents/common/latestProduct/latesProduct';
+import BannerSlider from '../../commponents/common/bannerSlider/BannerSlider';
+import SecondBanner from '../../commponents/common/secondBanner/SecondBanner';
+import BeautySlider from '../../commponents/common/beautySlider/BeautySlider';
+import FootwearSlider from '../../commponents/common/footwear/FootwearSlider';
+import JewelerySlider from '../../commponents/common/jewelery/JewelerySlider';
+import ElectronSlider from '../../commponents/common/electronsSlider/ElectronSlider';
+import WellnessSlider from '../../commponents/common/wellnessSlider/WellnessSlider';
+import BagSlider from '../../commponents/common/bagSlider/BagSlider';
+import FeaturedSlider from '../../commponents/common/FeaturedProduct/FeaturedProduct';
 
 
 const Home = () => {
@@ -23,12 +28,12 @@ const Home = () => {
 
   return (
     <>
-      <div className='slider'>
+      <div className='slider' style={{background:"#e4e3e399"}}>
         <Slider/>
         <CatSlider/>
       </div>
       <section className='container-fluid'>
-        <div className='row'>
+        <div className='row py-4'>
           <div className='col-4 leftSection'>
             <h3>Popular Products</h3>
             <p>Do not miss the current offers until theend of March.</p>
@@ -71,10 +76,12 @@ const Home = () => {
           </div>
         </div>
       </section>
-     
+      <section>
+        <BannerSlider/>
+      </section>
       <section>
       <div className='row py-4'>
-          <div className='col-4 leftSection'>
+          <div className='col-4 py-4 leftSection'>
             <h3>Latest Products</h3>
         </div>
         <LatestProduct/>
@@ -82,14 +89,53 @@ const Home = () => {
       </section>
       <section>
       <div className='row'>
-          <div className='col-4 leftSection'>
+          <div className='col-4 py-4 leftSection'>
             <h3>Featured Products</h3>
         </div>
-        <LatestProduct/>
+        <FeaturedSlider/>
         </div>
+      </section>
+      <section>
+        <SecondBanner/>
+      </section>
+      <section>
+      <div className='col-4 py-4 leftSection'>
+            <h3>Beauty</h3>
+        </div>
+        <BeautySlider/>
+      </section>
+      <section>
+      <div className='col-4 py-4 leftSection'>
+            <h3>Footwear</h3>
+        </div>
+        <FootwearSlider/>
+      </section>
+      <section>
+      <div className='col-4 py-4 leftSection'>
+            <h3>Jewelery</h3>
+        </div>
+        <JewelerySlider/>
+      </section>
+      <section>
+      <div className='col-4 py-4 leftSection'>
+            <h3>Electrons</h3>
+        </div>
+        <ElectronSlider/>
+      </section>
+      <section>
+      <div className='col-4 py-4 leftSection'>
+            <h3>Wellness</h3>
+        </div>
+        <WellnessSlider/>
+      </section>
+      <section>
+      <div className='col-4 py-4 leftSection'>
+            <h3>Bags</h3>
+        </div>
+        <BagSlider/>
       </section>
     </>
   )
 }
 
-export default Home
+export default Home;

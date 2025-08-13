@@ -8,6 +8,12 @@ import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
 import { Navigation } from 'swiper/modules';
 import cat3 from '../../../assets/img/cat3.jpg';
+import cat4 from '../../../assets/img/cat4.jpg'
+import cat5 from '../../../assets/img/cat5.jpg'
+import cat6 from '../../../assets/img/cat6.jpg'
+import cat7 from '../../../assets/img/cat7.jpg'
+import cat8 from '../../../assets/img/cat8.jpg'
+import cat9 from '../../../assets/img/cat9.jpg'
 import "../../../css/style.css"
 
 const LatestProduct = () => {
@@ -90,7 +96,7 @@ const LatestProduct = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
-          <img src={cat3} style={{ height: '100%',width:"100%" }} alt="Product" />
+          <img src={cat4} style={{ height: '100%',width:"100%" }} alt="Product" />
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -138,7 +144,7 @@ const LatestProduct = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
-          <img src={cat3} style={{ height: '100%',width:"100%" }} alt="Product" />
+          <img src={cat5} style={{ height: '100%',width:"100%" }} alt="Product" />
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -186,7 +192,7 @@ const LatestProduct = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
-          <img src={cat3} style={{ height: '100%',width:"100%" }} alt="Product" />
+          <img src={cat6} style={{ height: '100%',width:"100%" }} alt="Product" />
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -234,7 +240,7 @@ const LatestProduct = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
-          <img src={cat3} style={{ height: '100%',width:"100%" }} alt="Product" />
+          <img src={cat7} style={{ height: '100%',width:"100%" }} alt="Product" />
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -282,7 +288,7 @@ const LatestProduct = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
-          <img src={cat3} style={{ height: '100%',width:"100%" }} alt="Product" />
+          <img src={cat8} style={{ height: '100%',width:"100%" }} alt="Product" />
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>

@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../Header'
 import '../../../css/style.css'
+import Footer from '../Footer'
 const Main = ({ children }) => {
   return (
     <div>
@@ -8,7 +9,7 @@ const Main = ({ children }) => {
     <div className='children'>
         {children}
     </div>
-
+    <Footer/>
     </div>
   )
 }

@@ -54,6 +54,8 @@ const Nav = () => {
     ]
 
     return (
+    <>
+        <div className={`${!open ? 'overlay': ''}`}></div>
         <div div className='container-fluid navs'>
             <Aside open={open} close={closeAside}/>
 
@@ -80,6 +82,7 @@ const Nav = () => {
                 </div>
             </div>
         </div>
+        </>
     )
 }
 

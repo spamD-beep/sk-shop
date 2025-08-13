@@ -93,6 +93,18 @@ cursor: pointer;
      border-bottom: 1px solid lightgray;
    
 }
+.overlay {
+    position: fixed; /* Always stays on top even when scrolling */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(59, 58, 58, 0.25); /* Color + transparency in one line *//* Slight blur effect for background */
+    z-index: 1000; /* Above most elements */
+    transition: opacity 0.3s ease; /* Smooth fade effect */
+    opacity: 1; /* Fully visible (you can toggle this with JS) */
+    overflow: hidden;
+}
 
 .navitem{
     display: flex;
@@ -201,21 +213,23 @@ aside ul li:hover{
 /* Home */
 
 section{
-    padding:20px 15px;
+    padding:30px 15px;
 }
 .shipping{
     height:50px;
     border:2px solid brown;
-    padding:30px 10px;
+    padding:40px 10px;
     align-items: center;
+    margin:30px 0px;
 }
 .shipping .span:nth-child(1),.span:nth-child(2){
     padding-right:8%;
     border-right:1px solid lightgray
 }
+
 .leftSection h3{
  font-weight:bold;
- font-size:15pt;
+ font-size:18pt;
 }
 .leftSection p{
     font-size: 10pt;
@@ -237,10 +251,10 @@ section{
     height:100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     right:5px;
     width:50%;
     position: absolute;
+    padding:10px;
 }
 .dis2{
     height:100%;
@@ -265,8 +279,177 @@ section{
     color:red;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom:15px;
 }
 .addToCard:hover{
     background-color: black;
     color:white;
+}
+
+
+
+
+
+/* footer */
+.inform {
+    padding:0px 170px;
+    width:100%;
+    height:300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgray;
+}
+.inform .info{
+    font-size:30pt;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:8px;
+}
+.hoverInfo{
+    transition: all 0.3s ease;
+}
+.hoverInfo:hover{
+    color:red;
+    cursor: pointer;
+    font-size: 32pt;
+}
+.firstFooter{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    border-right:1px solid lightgray;
+}
+.secHoverFooter{
+    color:rgb(80, 79, 79);
+}
+.secHoverFooter:hover{
+    color:red;
+    cursor: pointer;
+}
+.icon{
+    display: flex;
+    gap:10px;
+}
+.mediaIcon{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    border:1px solid lightgray;
+}
+/* category */
+.mainCat{
+width:250px;
+height:110vh;
+}
+
+
+.category{
+    width:250px;
+    background-color: white;
+}
+.category h3{
+   font-weight: bold;
+    font-size: 11pt;
+}
+.filter{
+     width:250px;
+    background-color: white;
+}
+.filter h3,.rating h3{
+   font-weight: bold;
+    font-size: 12pt;
+}
+.category .checkbox{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height:30vh;
+    overflow: auto;
+    padding:5px 20px;
+    gap:10px;
+    font-size:10pt;
+}
+.category input[type="checkbox"] {
+  accent-color: red;
+  margin-right: 10px;
+  width: 15px;             /* Width badhao */
+  height: 15px;
+  cursor: pointer; /* checkbox ka tick aur box ka color red ho jayega */
+}
+.filter .range input[type=range] {
+  width: 80%;
+  margin: 0 auto;
+  -webkit-appearance: none; /* Default browser style remove */
+  background: transparent;  /* Track ka background handle karenge */
+}
+
+/* Track (Chrome, Safari, Edge) */
+.filter .range input[type=range]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: red;
+  border-radius: 3px;
+}
+
+/* Thumb (Chrome, Safari, Edge) */
+.filter .range input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 16px;
+  width: 16px;
+  background: red;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -5px; /* Center thumb vertically on track */
+}
+
+/* Track (Firefox) */
+.filter .range input[type=range]::-moz-range-track {
+  height: 6px;
+  background: red;
+  border-radius: 3px;
+}
+
+/* Thumb (Firefox) */
+.filter .range input[type=range]::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  background: red;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.rating-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding:5px 20px;
+}
+
+.rating-option {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rating-option input[type="checkbox"] {
+  margin-right: 8px;
+  accent-color: red;
+  width:15px;
+  height:15px; /* Checkbox ka color */
+}
+
+.star {
+  font-size: 17pt;
+  margin-right: 2px;
+}
+
+.star.yellow {
+  color: rgb(255, 191, 0);
+}
+
+.star.transparent {
+  color: lightgray; /* Ya transparent */
 }
