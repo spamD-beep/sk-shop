@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+*{
+    font-family: "Arimo", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+.aside {
+  box-shadow: 1px 1px 15px lightgray;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: auto;
+}
+
+.aside .logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.aside .ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 80vh;
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* ========== Menu ========== */
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+.menu-link {
+  padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu-link:hover {
+  background: #f5f5f5;
+  color:black;
+}
+
+/* ========== Arrow ========== */
+.arrow {
+  transition: transform 0.3s ease;
+}
+.arrow.rotate {
+  transform: rotate(180deg);
+}
+
+/* ========== Submenu Transition ========== */
+.submenu {
+  list-style: none;
+  padding-left: 15px;
+  margin: 0;
+  background: #fafafa;
+
+  max-height: 0;          /* closed */
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.submenu.open {
+  max-height: 500px;      /* open (enough height for children) */
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+/* Submenu items */
+.submenu-item a {
+  display: block;
+  padding: 5px 15px;
+  font-size: 13px;
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.submenu-item a:hover {
+  color:black;
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+/* ========== Links ========== */
+.aside ul li a {
+  text-decoration: none;
+  color: rgb(64, 61, 61);
+  font-size: 11pt;
+}
+
+.burder{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding:10px;
+    box-shadow: 1px 1px 15px lightgray;
+}
+.banner{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.banner a{
+    height:40px;
+    line-height: 40px;
+    color:white;
+    text-decoration: none;
+    font-size: 11pt;
+    background-color: blue;
+    width:150px;
+    text-align: center;
+}
+.mainDash{
+    background-color: rgb(249, 244, 244);
+    padding:20px 0px;
+    height:91vh;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.bannerMain{
+    display: flex;
+    align-items: center;
+    margin:0px 10px;
+    margin-bottom: 20px;
+    background-color: white;
+    height:270px;
+}
+.chartRow{
+    margin:0px 10px;
+    display: flex;
+    justify-content: space-between;
+    }
+.chart{
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    height:100px;
+    width:230px;
+    align-items: center;
+    box-shadow: 1px 1px 15px lightgray;
+}
+.orderRow,.productRow,.graphRow{
+    margin:20px 10px;
+}
+.table-container {
+  width: 100%;
+  max-width: 1500px; /* table ki max width */
+  overflow: auto;
+  height:300px;  /* horizontal scroll enable karega */
+}
+
+table {
+  border-collapse: collapse;
+  width: 1500px; /* fixed width */
+}
+
+.tablerow th {
+  font-size: 11pt;
+  text-align: left;
+  padding: 8px;
+}
+
+/* har row ke neeche halka gray border */
+tr {
+  border-bottom: 1px solid lightgray;
+}
+
+td {
+  padding: 8px;
+}
+
+.products{
+    margin:0 20px;
+}
+label{
+    display: block;
+    font-size: 11pt;
+    font-weight: bold;
+}

@@ -118,8 +118,8 @@ const ProductSlider = () => {
             emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
           />
           <div className='price' style={{display:"flex",width:"100%",justifyContent:"space-between",gap:"10px"}}>
-            <div style={{color:"gray",fontSize:"10pt",textDecoration:"line-through"}}>$%50.00</div>
-            <div style={{color:"red",fontSize:"10pt"}}>$%58.00</div>
+            <div style={{color:"gray",fontSize:"10pt",textDecoration:"line-through"}}>$50.00</div>
+            <div style={{color:"red",fontSize:"10pt"}}>$58.00</div>
           </div>
           <div className='addToCard' style={{fontSize:"10pt",border:"1px solid red",padding:"10px",textAlign:"center",display:"flex",gap:"10px",justifyContent:"center"}}>
           <svg
