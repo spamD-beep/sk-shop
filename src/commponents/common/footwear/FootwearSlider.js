@@ -3,6 +3,9 @@ import './style.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
+import { CiHeart } from "react-icons/ci";
+import { MdOutlineZoomOutMap } from "react-icons/md";
+import { IoIosGitCompare } from "react-icons/io";
 import Rating from '@mui/material/Rating';
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
@@ -42,7 +45,20 @@ const FootwearSlider = () => {
       >
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
+<div className='imgItem'>
           <img src={cat3} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div>  
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -90,7 +106,20 @@ const FootwearSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
+         <div className='imgItem'>
           <img src={cat3} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div>  
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -138,7 +167,20 @@ const FootwearSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
+         <div className='imgItem'>
           <img src={cat3} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div>  
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -186,7 +228,20 @@ const FootwearSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
+          <div className='imgItem'>
           <img src={cat3} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div>  
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -234,7 +289,20 @@ const FootwearSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
+          <div className='imgItem'>
           <img src={cat3} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div>  
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -282,7 +350,20 @@ const FootwearSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
+          <div className='imgItem'>
           <img src={cat3} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div>  
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>

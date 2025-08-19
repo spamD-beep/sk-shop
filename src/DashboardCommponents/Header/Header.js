@@ -3,9 +3,17 @@ import { Link } from "react-router-dom";   // ✅ Router se navigation
 import '../styles.css'
 import dashLogo from '../../assets/img/logo.png'
 import user from '../../assets/img/footer3.png'
+
+// Icons
 import { RiMenu2Fill } from "react-icons/ri";
-import { FaBell } from "react-icons/fa";
+import { FaBell, FaUser, FaProductHunt } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
+import { RxDashboard } from "react-icons/rx";
+import { TfiLayoutSlider } from "react-icons/tfi";
+import { MdProductionQuantityLimits, MdDriveFolderUpload, MdOutlineCategory } from "react-icons/md";
+import { FiPackage } from "react-icons/fi";
+import { FaRegListAlt } from "react-icons/fa";   // ✅ FaRegRectangleList replace
+import { TbCategoryPlus } from "react-icons/tb";
 
 const Header = ({ children }) => {
   const [open, setOpen] = useState(true);
@@ -21,37 +29,43 @@ const Header = ({ children }) => {
 
   const aside = [
     {
+      icon: <RxDashboard />,
       label: "Dashboard",
       path: "/Dashboard"
     },
     {
+      icon: <TfiLayoutSlider />,
       label: "Home Slides",
       children: [
-        { label: "Home Banner List", path: "/HomeBannerSlider" },
-        { label: "Add Banner Slide", path: "/AddHomeSlider" }
+        { label: "Home Banner List", icon: <TfiLayoutSlider />, path: "/HomeBannerSlider" },
+        { label: "Add Banner Slide", icon: <MdDriveFolderUpload />, path: "/AddHomeSlider" }
       ]
     },
     {
+      icon: <FaUser />,
       label: "User",
       path: "/User"
     },
     {
+      icon: <MdProductionQuantityLimits />,
       label: "Products",
       children: [
-        { label: "Product List", path: "/Products" },
-        { label: "Product Upload", path: "/AddProducts" }
+        { label: "Product List", icon: <FaProductHunt />, path: "/Products" },
+        { label: "Product Upload", icon: <MdDriveFolderUpload />, path: "/AddProducts" }
       ]
     },
     {
+      icon: <MdOutlineCategory />,
       label: "Category",
       children: [
-        { label: "Category List", path: "/Category" },
-        { label: "Category Upload", path: "/AddCategory" },
-        { label: "Sub Category List", path: "/SubCategory" },
-        { label: "Add Sub Category ", path: "/AddSubCategory" }
+        { label: "Category List", icon: <FaRegListAlt />, path: "/Category" },
+        { label: "Category Upload", icon: <MdDriveFolderUpload />, path: "/AddCategory" },
+        { label: "Sub Category List", icon: <TbCategoryPlus />, path: "/SubCategory" },
+        { label: "Add Sub Category ", icon: <MdDriveFolderUpload />, path: "/AddSubCategory" }
       ]
     },
     {
+      icon: <FiPackage />,
       label: "Orders",
       path: "/Orders"
     },
@@ -71,17 +85,23 @@ const Header = ({ children }) => {
                 {/* ✅ Agar children hain to toggle karega, warna direct Link */}
                 {item.children ? (
                   <div 
-                    className="menu-link"
+                    className="menu-link d-flex align-items-center justify-content-between"
                     onClick={() => handleSubmenu(index)}
                   >
-                    <span>{item.label}</span>
+                    <div className="d-flex align-items-center gap-2">
+                      {item.icon}
+                      <span>{item.label}</span>
+                    </div>
                     <IoIosArrowDown 
                       className={`arrow ${submenuOpen === index ? "rotate" : ""}`}
                     />
                   </div>
                 ) : (
-                  <Link to={item.path} className="menu-link">
-                    {item.label}
+                  <Link to={item.path} className="menu-link d-flex align-items-center gap-2">
+                    <div className='d-flex align-items-center gap-2'>
+                    {item.icon}
+                    <span>{item.label}</span>
+                    </div>
                   </Link>
                 )}
 
@@ -90,7 +110,10 @@ const Header = ({ children }) => {
                   <ul className={`submenu ${submenuOpen === index ? "open" : ""}`}>
                     {item.children.map((child, idx) => (
                       <li key={idx} className="submenu-item">
-                        <Link to={child.path}>{child.label}</Link>
+                        <Link to={child.path} className="d-flex align-items-center gap-2">
+                          {child.icon}
+                          <span>{child.label}</span>
+                        </Link>
                       </li>
                     ))}
                   </ul>

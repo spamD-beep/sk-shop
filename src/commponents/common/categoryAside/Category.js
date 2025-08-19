@@ -6,9 +6,10 @@ const Category = ({ children }) => {
   const ratings = [5, 4, 3, 2, 1];
 
   return (
-    <div className='mainCat'>
-      <div className="category">
-        <div className='d-flex p-3 justify-content-between'>
+    <div className='mainCat' >
+    <div>
+      <div className="category ">
+        <div className='d-flex  p-3 justify-content-between'>
           <h3>Shop By Category</h3>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
             viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -70,7 +71,10 @@ const Category = ({ children }) => {
       ))}
     </div>
         </div>
+        </div>
+        <div className='sec'>
       {children}
+      </div>
     </div>
   )
 }

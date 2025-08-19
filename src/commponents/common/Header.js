@@ -2,6 +2,7 @@ import React from "react";
 import "../../css/style.css";
 import Logo from "../../assets/img/log.png";
 import Nav from "./Nav.js";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
@@ -14,12 +15,12 @@ const Header = () => {
               </div>
             </div>
             <div className="col-6 d-flex help-center justify-content-end align-items-center gap-3">
-              <a href="#" className="border-end border-end-1 border-0">
+              <Link to="/help-center" className="border-end border-end-1 border-0">
                 Help Center
-              </a>
-              <a href="#" className="border-end border-end-1 border-0">
+              </Link>
+              <Link to="/order-tracking" className="border-end border-end-1 border-0">
                 Order Tracking
-              </a>
+              </Link>
               <select className="border-end border-end-1 border-0">
                 <option disabled selected>
                   {" "}
@@ -88,6 +89,7 @@ const Header = () => {
                 <path d="M12 18H7a2 2 0 0 1-2-2V9" />
                 <path d="m9 15 3 3-3 3" />
               </svg>
+              <Link to="/my-list">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -102,6 +104,7 @@ const Header = () => {
               >
                 <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
               </svg>
+              </Link>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"

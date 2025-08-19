@@ -272,8 +272,31 @@ section{
     position: absolute;
     top:5px;
     left:5px;
+    z-index:1;
     font-size: 9pt;
     border-radius: 10px;
+}
+.imgItem{
+  position: relative;
+}
+
+.imgItem .icons {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  /* 👇 initially hidden (slide up + transparent) */
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease-in-out;
+}
+/* ✅ Jab hover kare to slide down + visible */
+.imgItem:hover .icons {
+  opacity: 1;
+  transform: translateY(0);
 }
 .addToCard{
     color:red;
@@ -342,13 +365,14 @@ section{
 }
 /* category */
 .mainCat{
-width:250px;
+width:220px;
 height:110vh;
+display: flex;
 }
 
 
 .category{
-    width:250px;
+    width:220px;
     background-color: white;
 }
 .category h3{
@@ -356,7 +380,7 @@ height:110vh;
     font-size: 11pt;
 }
 .filter{
-     width:250px;
+     width:220px;
     background-color: white;
 }
 .filter h3,.rating h3{
@@ -452,4 +476,347 @@ height:110vh;
 
 .star.transparent {
   color: lightgray; /* Ya transparent */
+}
+
+/* orderTrack */
+.order-progress {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin-top: 20px;
+}
+
+.order-progress::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #ddd;
+  z-index: 0;
+}
+
+.step {
+  text-align: center;
+  position: relative;
+  width: 25%;
+  z-index: 1;
+}
+
+.step .circle {
+  width: 40px;
+  height: 40px;
+  background: #ddd;
+  border-radius: 50%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #555;
+  position: relative;
+}
+
+.step.completed .circle {
+  background: #28a745;
+  color: white;
+}
+
+.step.active .circle {
+  border: 3px solid #28a745;
+  background: white;
+  color: #28a745;
+}
+
+.step p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* my-list */
+.mylist-container {
+  display: flex;
+  background: #f9fafb;
+  min-height: 45vh;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 25%;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 15px 0;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #555;
+  transition: 0.3s;
+}
+
+.menu li:hover {
+  color: #e63946;
+}
+.menu a{
+color: #555;
+    text-decoration: none;
+}
+
+.menu .active a {
+  color: #e63946;
+  font-weight: 600;
+}
+
+/* Content */
+.content {
+  width: 75%;
+  background: #fff;
+  margin-left: 20px;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.subtitle span {
+  color: #e63946;
+  font-weight: 600;
+}
+
+/* Empty List */
+.empty-list {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.empty-img {
+  width: 90px;
+  margin-bottom: 15px;
+}
+
+.empty-text {
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.btn {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #c72c38;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.card {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 15px;
+  text-align: center;
+}
+
+.card-img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.card-price {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.remove-btn {
+  background: #e63946;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.remove-btn:hover {
+  background: #c72c38;
+}
+/* Adress */
+
+
+.address-card {
+  background: #fff;
+  padding: 20px;
+  width:100%;
+  height:25vh;
+  border-radius: 8px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.1);
+}
+
+.address-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.address-empty {
+  background: #f0f9ff;
+  border: 1px dashed #d1d5db;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.address-empty:hover {
+  background: #e0f2fe;
+}
+
+.address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.address-item {
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+/* Overlay */
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+}
+
+/* Drawer box */
+.drawer {
+  background: #fff;
+  width: 350px;
+  height: 100%;
+  padding: 20px;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  animation: slideIn 0.3s ease forwards;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.close-btn {
+  border: none;
+  background: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.drawer-body input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+.drawer-body input[type="radio"] {
+  
+    width: 10%;
+
+
+}
+
+.address-type {
+  margin: 10px 0;
+}
+
+.save-btn {
+  background: #ff4d4d;
+  border: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: auto;
 }

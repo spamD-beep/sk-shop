@@ -4,6 +4,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import Rating from '@mui/material/Rating';
+import { CiHeart } from "react-icons/ci";
+import { MdOutlineZoomOutMap } from "react-icons/md";
+import { IoIosGitCompare } from "react-icons/io";
 import Box from '@mui/material/Box';
 import StarIcon from '@mui/icons-material/Star';
 import { Navigation } from 'swiper/modules';
@@ -47,8 +50,22 @@ const ProductSlider = () => {
         className="proSwiper"
       >
         <SwiperSlide className="promain">
+        <CiHeart/>
         <div className='discount'>10%</div>
+        <div className='imgItem'>
           <img src={cat4} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div>          
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -96,7 +113,20 @@ const ProductSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
+          <div className='imgItem'>
           <img src={cat5} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div> 
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -144,7 +174,20 @@ const ProductSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
+          <div className='imgItem'>
           <img src={cat6} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div> 
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -192,7 +235,20 @@ const ProductSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
+          <div className='imgItem'>
           <img src={cat7} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div> 
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -240,7 +296,20 @@ const ProductSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
+          <div className='imgItem'>
           <img src={cat8} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div> 
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -288,7 +357,20 @@ const ProductSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
+          <div className='imgItem'>
           <img src={cat9} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div> 
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>
@@ -310,8 +392,8 @@ const ProductSlider = () => {
             emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
           />
           <div className='price' style={{display:"flex",width:"100%",justifyContent:"space-between",gap:"10px"}}>
-            <div style={{color:"gray",fontSize:"10pt",textDecoration:"line-through"}}>$%50.00</div>
-            <div style={{color:"red",fontSize:"10pt"}}>$%58.00</div>
+            <div style={{color:"gray",fontSize:"10pt",textDecoration:"line-through"}}>$50.00</div>
+            <div style={{color:"red",fontSize:"10pt"}}>$58.00</div>
           </div>
           <div className='addToCard' style={{fontSize:"10pt",border:"1px solid red",padding:"10px",textAlign:"center",display:"flex",gap:"10px",justifyContent:"center"}}>
           <svg
@@ -336,7 +418,20 @@ const ProductSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="promain">
         <div className='discount'>10%</div>
+          <div className='imgItem'>
           <img src={cat3} style={{ height: '100%',width:"100%" }} alt="Product" />
+        <div className='icons'>
+        <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <MdOutlineZoomOutMap style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <CiHeart style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+         <div style={{width:"30px",height:"30px",textAlign:"center",background:"white",borderRadius:"50%",boxShadow:"1px 1px 15px gray"}}>
+        <IoIosGitCompare style={{ fontSize:"14pt",fontWeight:"600",cursor:"pointer"}}/>
+        </div>
+        </div>
+          </div> 
           <div style={{padding:"5px",paddingBottom:"10px", display:"flex",flexDirection:"column",gap:"2px"}}>
           <div style={{ color: 'gray', fontSize: '10pt' }}>Soylent Green</div>
           <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }}>

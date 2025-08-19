@@ -9,6 +9,7 @@ import { IoGiftSharp, IoStatsChartSharp } from "react-icons/io5";
 import { RiPieChartFill } from "react-icons/ri";
 import { TbChartBubbleFilled } from "react-icons/tb";
 import { TiSocialPinterestCircular } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const [expandedRow, setExpandedRow] = useState(null);
@@ -278,9 +279,9 @@ const Dashboard = () => {
             Here's what happening on your store today. See the statistics at
             once.
           </span>
-          <a href="#">
+          <Link to="/AddProducts">
             <IoMdAdd /> Add Product
-          </a>
+          </Link>
         </div>
         <div className="col-4">
           <img src={dashBanner} height="250px" alt="dashboard banner" />
@@ -374,19 +375,20 @@ const Dashboard = () => {
       Export
     </button>
 
-    <button 
+    <Link to="/AddProducts"
       style={{ 
         background:"blue",
         color:"white",
         border:"none",
-        padding:"6px 12px",
+        padding:"8px 12px",
         borderRadius:"5px",
         fontSize:"10pt",
-        cursor:"pointer"
+        cursor:"pointer",
+        textDecoration:"none",
       }}
     >
       Add Product
-    </button>
+    </Link>
   </div>
 </div>
 

@@ -16,6 +16,10 @@ import SubCategory from './Dashboard/SubCategory/SubCategory'
 import AddSubCategory from './Dashboard/AddSubCategory/AddSubCategory'
 import User from './Dashboard/User/User'
 import Orders from './Dashboard/Orders/Orders'
+import OrderTrack from './User/orderTrack/OrderTrack'
+import HelpCenter from './User/helpCenter/HelpCenter'
+import MyList from './User/myList/MyList'
+import Address from './User/Adress/Adress'
 
 const App = () => {
   return (
@@ -34,6 +38,11 @@ const App = () => {
         <Route path='/User' element={<Header><User/></Header>}/>
         <Route path='/Orders' element={<Header><Orders/></Header>}/>
         <Route path="/" element={<Main><Home/></Main>} />
+        <Route path="/order-tracking" element={<Main><OrderTrack/></Main>} />
+        <Route path="/help-center" element={<Main><HelpCenter/></Main>} />
+        <Route path="/my-list" element={<Main><MyList/></Main>} />
+        <Route path="/adress" element={<Main><Address/></Main>} />
+       
         <Route path="/fashion" element={<Main><Category><Fashion/></Category></Main>} />
       </Routes>
       </BrowserRouter>
