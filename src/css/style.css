@@ -36,6 +36,7 @@ cursor: pointer;
     justify-content: center;
     position: relative;
 }
+
 .serch-box svg{
     position: absolute;
     right:15px;
@@ -140,7 +141,7 @@ cursor: pointer;
 }
 .navbar ul li{
     height:100%;
-    font-size:11pt;
+    font-size:12pt;
 }
 .navbar ul li a{
     color:rgb(66, 66, 66);
@@ -149,7 +150,7 @@ cursor: pointer;
     cursor: pointer;
 }
 .navbar ul li a:hover{
-    color:rgb(255, 138, 3);
+    color:red;
 }
 
 /* AsideBar */
@@ -365,14 +366,19 @@ section{
 }
 /* category */
 .mainCat{
-width:220px;
-height:110vh;
+width:100%;
+height:90vh;
 display: flex;
+
 }
 
+.leftCat{
+  width:17%;
+  box-shadow: 1px 1px 15px lightgray;
 
+}
 .category{
-    width:220px;
+    width:100%;
     background-color: white;
 }
 .category h3{
@@ -380,7 +386,7 @@ display: flex;
     font-size: 11pt;
 }
 .filter{
-     width:220px;
+     width:100%;
     background-color: white;
 }
 .filter h3,.rating h3{
@@ -395,7 +401,7 @@ display: flex;
     overflow: auto;
     padding:5px 20px;
     gap:10px;
-    font-size:10pt;
+    font-size:11pt;
 }
 .category input[type="checkbox"] {
   accent-color: red;
@@ -471,7 +477,7 @@ display: flex;
 }
 
 .star.yellow {
-  color: rgb(255, 191, 0);
+  color: rgb(255, 123, 0);
 }
 
 .star.transparent {
@@ -534,7 +540,9 @@ display: flex;
   font-size: 14px;
   font-weight: 500;
 }
-
+.sec{
+  width:83%;
+}
 /* my-list */
 .mylist-container {
   display: flex;
@@ -819,4 +827,18 @@ color: #555;
   cursor: pointer;
   font-size: 16px;
   margin-top: auto;
+}
+.sorting{
+ width:95%;
+ margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0eeee;
+}
+.sorting .TotalProducts{
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }

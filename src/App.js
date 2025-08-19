@@ -20,6 +20,13 @@ import OrderTrack from './User/orderTrack/OrderTrack'
 import HelpCenter from './User/helpCenter/HelpCenter'
 import MyList from './User/myList/MyList'
 import Address from './User/Adress/Adress'
+import Electrons from './User/Electrons/Electrons'
+import Bags from './User/Bags/Bags'
+import Footwear from './User/Footwear/Footwear'
+import Groceries from './User/Groceries/Groceries'
+import Beauty from './User/Beauty/Beauty'
+import Wellness from './User/Wellness/Wellness'
+import Jewelery from './User/Jewelery/Jewelery'
 
 const App = () => {
   return (
@@ -42,7 +49,15 @@ const App = () => {
         <Route path="/help-center" element={<Main><HelpCenter/></Main>} />
         <Route path="/my-list" element={<Main><MyList/></Main>} />
         <Route path="/adress" element={<Main><Address/></Main>} />
-       
+        <Route path="/fashion" element={<Main><Category><Fashion/></Category></Main>} />
+        <Route path="/electronics" element={<Main><Category><Electrons/></Category></Main>} />
+        <Route path="/bags" element={<Main><Category><Bags/></Category></Main>} />
+        <Route path="/footwear" element={<Main><Category><Footwear/></Category></Main>} />
+        <Route path="/groceries" element={<Main><Category><Groceries/></Category></Main>} />
+        <Route path="/beauty" element={<Main><Category><Beauty/></Category></Main>} />
+        <Route path="/wellness" element={<Main><Category><Wellness/></Category></Main>} />
+        <Route path="/jewelery" element={<Main><Category><Jewelery/></Category></Main>} />
+        <Route path="/fashion" element={<Main><Category><Fashion/></Category></Main>} />
         <Route path="/fashion" element={<Main><Category><Fashion/></Category></Main>} />
       </Routes>
       </BrowserRouter>

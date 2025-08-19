@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./fashion.css";
+import "./Beauty.css";
 import "../../css/style.css";
 import Rating from "@mui/material/Rating";
 import cat3 from "../../assets/img/cat3.jpg";
@@ -25,7 +25,7 @@ const initialProducts = [
   { id: 8, discount: "10%", name: "LED Monitor", des: "this is native product and its real and good product,So what are you", oprice: 14500, lprice: 2000, rating: 4.9, image: cat9 },
 ];
 
-const Fashion = () => {
+const Beauty = () => {
   const [products, setProducts] = useState(initialProducts);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
@@ -279,4 +279,4 @@ const Fashion = () => {
   );
 };
 
-export default Fashion;
+export default Beauty;

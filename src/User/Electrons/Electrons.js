@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./fashion.css";
+import "./Electrons.css";
 import "../../css/style.css";
 import Rating from "@mui/material/Rating";
 import cat3 from "../../assets/img/cat3.jpg";
@@ -15,17 +15,17 @@ import { IoIosGitCompare } from "react-icons/io";
 import { RxDashboard } from "react-icons/rx";
 
 const initialProducts = [
-  { id: 1, discount: "10%", name: "Nike Shoes", des: "this is native product and its real and good product,So what are you", oprice: 2500, lprice: 2000, rating: 4.5, image: cat3 },
-  { id: 2, discount: "10%", name: "Smart Watch", des: "this is native product and its real and good product,So what are you", oprice: 3500, lprice: 2000, rating: 4, image: cat4 },
-  { id: 3, discount: "10%", name: "Headphones", des: "this is native product and its real and good product,So what are you", oprice: 1800, lprice: 2000, rating: 5, image: cat5 },
-  { id: 4, discount: "10%", name: "Laptop Bag", des: "this is native product and its real and good product,So what are you", oprice: 2200, lprice: 2000, rating: 3.5, image: cat5 },
-  { id: 5, discount: "10%", name: "Gaming Mouse", des: "this is native product and its real and good product,So what are you", oprice: 1500, lprice: 2000, rating: 4.2, image: cat6 },
-  { id: 6, discount: "10%", name: "Keyboard", des: "this is native product and its real and good product,So what are you", oprice: 1200, lprice: 2000, rating: 3.8, image: cat7 },
-  { id: 7, discount: "10%", name: "iPhone Case", des: "this is native product and its real and good product,So what are you", oprice: 900, lprice: 2000, rating: 4.7, image: cat8 },
+  { id: 1, discount: "10%", name: "Nike Shoes", des: "this is native product and its real and good product,So what are you", oprice: 2500, lprice: 2000, rating: 4.5, image: cat9 },
+  { id: 2, discount: "10%", name: "Smart Watch", des: "this is native product and its real and good product,So what are you", oprice: 3500, lprice: 2000, rating: 4, image: cat8 },
+  { id: 3, discount: "10%", name: "Headphones", des: "this is native product and its real and good product,So what are you", oprice: 1800, lprice: 2000, rating: 5, image: cat7 },
+  { id: 4, discount: "10%", name: "Laptop Bag", des: "this is native product and its real and good product,So what are you", oprice: 2200, lprice: 2000, rating: 3.5, image: cat6 },
+  { id: 5, discount: "10%", name: "Gaming Mouse", des: "this is native product and its real and good product,So what are you", oprice: 1500, lprice: 2000, rating: 4.2, image: cat5 },
+  { id: 6, discount: "10%", name: "Keyboard", des: "this is native product and its real and good product,So what are you", oprice: 1200, lprice: 2000, rating: 3.8, image: cat4 },
+  { id: 7, discount: "10%", name: "iPhone Case", des: "this is native product and its real and good product,So what are you", oprice: 900, lprice: 2000, rating: 4.7, image: cat3 },
   { id: 8, discount: "10%", name: "LED Monitor", des: "this is native product and its real and good product,So what are you", oprice: 14500, lprice: 2000, rating: 4.9, image: cat9 },
 ];
 
-const Fashion = () => {
+const Electrons = () => {
   const [products, setProducts] = useState(initialProducts);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
@@ -279,4 +279,4 @@ const Fashion = () => {
   );
 };
 
-export default Fashion;
+export default Electrons;

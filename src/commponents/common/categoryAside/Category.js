@@ -7,7 +7,7 @@ const Category = ({ children }) => {
 
   return (
     <div className='mainCat' >
-    <div>
+    <div className='leftCat'>
       <div className="category ">
         <div className='d-flex  p-3 justify-content-between'>
           <h3>Shop By Category</h3>
@@ -47,8 +47,8 @@ const Category = ({ children }) => {
         </div>
         {/* Price Labels */}
         <div className="d-flex justify-content-between px-2 py-2">
-          <span style={{fontSize:"9pt"}}>From: Rs 0</span>
-          <span style={{fontSize:"9pt"}}>From: Rs {price.toLocaleString()}</span>
+          <span style={{fontSize:"10pt"}}>From: Rs 0</span>
+          <span style={{fontSize:"10pt"}}>From: Rs {price.toLocaleString()}</span>
         </div>
       </div>
           <div className='rating'>

@@ -1,6 +1,6 @@
 import React from "react";
 import "../../css/style.css";
-import Logo from "../../assets/img/log.png";
+import Logo from "../../assets/img/LogoReal.jpg";
 import Nav from "./Nav.js";
 import { Link } from "react-router-dom";
 const Header = () => {
@@ -39,20 +39,21 @@ const Header = () => {
       </div>
       <div className="main">
         <div className="container-fluid second">
-          <div className="row logo">
+          <div className="row logo py-3">
             <div className="col-3 img">
               <img src={Logo} alt="logo" />
             </div>
             <div className="col-6 serch-box">
               <input
                 type="text"
+                style={{padding:"10px",fontSize:"14pt"}}
                 className="w-100 search border-0"
                 placeholder="Search for products..."
               />
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
+                width="26"
+                height="26"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
