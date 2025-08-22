@@ -51,18 +51,18 @@ const AddProduct = () => {
       const formData = new FormData();
 
       // Text + Number fields
-      formData.append("name", data.name);
-      formData.append("description", data.description);
-      formData.append("category", data.category);
-      formData.append("subCategory", data.subCategory);
-      formData.append("price", data.price);
-      formData.append("oldPrice", data.oldPrice);
-      formData.append("isFeatured", data.isFeatured);
-      formData.append("brand", data.brand);
-      formData.append("stock", data.stock);
-      formData.append("discount", data.discount);
-      formData.append("size", data.size);
-      formData.append("rating", data.rating);
+    formData.append("productName", data.name);
+    formData.append("productDes", data.description);
+    formData.append("productCat", data.category);
+    formData.append("productSubCat", data.subCategory);
+    formData.append("productPrice", data.price);
+    formData.append("productOldPrice", data.oldPrice);
+    formData.append("productFeatured", data.isFeatured);
+    formData.append("productBrand", data.brand);
+    formData.append("productStock", data.stock);
+    formData.append("productDiscount", data.discount);
+    formData.append("productSize", data.size);
+    formData.append("productRating", data.rating);
 
       // Files append (multiple)
       if (data.media && data.media.length > 0) {
