@@ -1,279 +1,170 @@
-import React, { useState } from "react";
+import React from "react";
 import Rating from "@mui/material/Rating";
+import { useForm, Controller } from "react-hook-form";
+import { useAddProductMutation } from "../../api/productApi";
 
 const AddProduct = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    description: "",
-    category: "",
-    subCategory: "",
-    price: "",
-    oldPrice: "",
-    isFeatured: "",
-    brand: "",
-    stock: "",
-    discount: "",
-    rams: "",
-    weight: "",
-    size: "",
-    rating: 0,
-    media: [],
+  const [addProduct] = useAddProductMutation();
+
+  const {
+    register,
+    handleSubmit,
+    control,
+    setValue,
+    watch,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      productName: "",
+      productDes: "",
+      productCat: "",
+      productSubCat: "",
+      productPrice: "",
+      productOldPrice: "",
+      productFeatured: "",
+      productBrand: "",
+      productStock: "",
+      productDiscount: "",
+      productSize: "",
+      productRating: 0,
+      media: [],
+    },
   });
 
-  // 🟢 handle input change
-  const handleChange = (e) => {
-    const { name, value, type, files } = e.target;
-    if (type === "file") {
-      // Agar multiple files select ki hain to purani files ke sath nayi add karni
-      const newFiles = Array.from(files);
-      setFormData((prev) => ({
-        ...prev,
-        [name]: [...prev.media, ...newFiles],
-      }));
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
+  const handleFileChange = (e) => {
+    const files = Array.from(e.target.files);
+    setValue("media", files, { shouldValidate: true });
   };
 
-  // 🟢 delete media file
-  const handleDeleteFile = (index) => {
-    const updatedFiles = [...formData.media];
-    updatedFiles.splice(index, 1);
-    setFormData({ ...formData, media: updatedFiles });
+  const onSubmit = async (data) => {
+    try {
+      const formData = new FormData();
+      formData.append("productName", data.productName);
+      formData.append("productDes", data.productDes);
+      formData.append("productCat", data.productCat);
+      formData.append("productSubCat", data.productSubCat);
+      formData.append("productPrice", data.productPrice);
+      formData.append("productOldPrice", data.productOldPrice);
+      formData.append("productFeatured", data.productFeatured);
+      formData.append("productBrand", data.productBrand);
+      formData.append("productStock", data.productStock);
+      formData.append("productDiscount", data.productDiscount);
+      formData.append("productSize", data.productSize);
+      formData.append("productRating", data.productRating);
+
+      if (data.media.length > 0) {
+        data.media.forEach((file) => formData.append("media", file));
+      }
+
+      await addProduct(formData).unwrap();
+      alert("✅ Product added successfully!");
+    } catch (err) {
+      console.error(err);
+      alert("❌ Failed to add product");
+    }
   };
 
   return (
     <div className="container py-3 bg-white add-product-form">
-      {/* Row 1 */}
-      <div className="row mb-3">
-        <div className="col">
-          <label>Product Name</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="form-control"
-          />
+      <form onSubmit={handleSubmit(onSubmit)}>
+        {/* Row 1 */}
+        <div className="row mb-3">
+          <div className="col">
+            <label>Product Name</label>
+            <input
+              type="text"
+              {...register("productName", { required: "Product name is required" })}
+              className="form-control"
+            />
+            {errors.productName && <p className="text-danger">{errors.productName.message}</p>}
 
-          <label className="mt-2">Product Description</label>
-          <textarea
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            className="form-control"
-          ></textarea>
+            <label className="mt-2">Product Description</label>
+            <textarea {...register("productDes")} className="form-control" />
+          </div>
         </div>
-      </div>
 
-      {/* Row 2 */}
-      <div className="row mb-3">
-        <div className="col-3">
-          <label>Product Category</label>
-          <select
-            name="category"
-            value={formData.category}
-            onChange={handleChange}
-            className="form-select"
-          >
-            <option value="">-- Select --</option>
-            <option>Fashion</option>
-            <option>Bags</option>
-            <option>Jewelery</option>
-          </select>
+        {/* Row 2 */}
+        <div className="row mb-3">
+          <div className="col-3">
+            <label>Category</label>
+            <input type="text" {...register("productCat")} className="form-control" />
+          </div>
+          <div className="col-3">
+            <label>Sub Category</label>
+            <input type="text" {...register("productSubCat")} className="form-control" />
+          </div>
+          <div className="col-3">
+            <label>Price</label>
+            <input type="number" {...register("productPrice")} className="form-control" />
+          </div>
+          <div className="col-3">
+            <label>Old Price</label>
+            <input type="number" {...register("productOldPrice")} className="form-control" />
+          </div>
         </div>
-        <div className="col-3">
-          <label>Product Sub Category</label>
-          <select
-            name="subCategory"
-            value={formData.subCategory}
-            onChange={handleChange}
-            className="form-select"
-          >
-            <option value="">-- Select --</option>
-            <option>Fashion</option>
-            <option>Bags</option>
-            <option>Jewelery</option>
-          </select>
-        </div>
-        <div className="col-3">
-          <label>Product Price</label>
-          <input
-            type="number"
-            name="price"
-            value={formData.price}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </div>
-        <div className="col-3">
-          <label>Product Old Price</label>
-          <input
-            type="number"
-            name="oldPrice"
-            value={formData.oldPrice}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </div>
-      </div>
 
-      {/* Row 3 */}
-      <div className="row mb-3">
-        <div className="col-3">
-          <label>Is Featured</label>
-          <select
-            name="isFeatured"
-            value={formData.isFeatured}
-            onChange={handleChange}
-            className="form-select"
-          >
-            <option value="">-- Select --</option>
-            <option>Yes</option>
-            <option>No</option>
-          </select>
+        {/* Row 3 */}
+        <div className="row mb-3">
+          <div className="col-3">
+            <label>Is Featured</label>
+            <select {...register("productFeatured")} className="form-select">
+              <option value="">-- Select --</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+          <div className="col-3">
+            <label>Brand</label>
+            <input type="text" {...register("productBrand")} className="form-control" />
+          </div>
+          <div className="col-3">
+            <label>Stock</label>
+            <input type="number" {...register("productStock")} className="form-control" />
+          </div>
+          <div className="col-3">
+            <label>Discount (%)</label>
+            <input type="number" {...register("productDiscount")} className="form-control" />
+          </div>
         </div>
-        <div className="col-3">
-          <label>Product Brand</label>
-          <input
-            type="text"
-            name="brand"
-            value={formData.brand}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </div>
-        <div className="col-3">
-          <label>Product Stock</label>
-          <input
-            type="number"
-            name="stock"
-            value={formData.stock}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </div>
-        <div className="col-3">
-          <label>Product Discount (%)</label>
-          <input
-            type="number"
-            name="discount"
-            value={formData.discount}
-            onChange={handleChange}
-            className="form-control"
-          />
-        </div>
-      </div>
 
-      {/* Row 4 */}
-      <div className="row mb-3">
-        <div className="col-3">
-          <label>Product RAMS</label>
-          <select
-            name="rams"
-            value={formData.rams}
-            onChange={handleChange}
-            className="form-select"
-          >
-            <option value="">-- Select --</option>
-            <option>2GB</option>
-            <option>4GB</option>
-            <option>8GB</option>
-            <option>16GB</option>
-          </select>
-        </div>
-        <div className="col-3">
-          <label>Product Weight</label>
-          <select
-            name="weight"
-            value={formData.weight}
-            onChange={handleChange}
-            className="form-select"
-          >
-            <option value="">-- Select --</option>
-            <option>0.5kg</option>
-            <option>1kg</option>
-            <option>2kg</option>
-          </select>
-        </div>
-        <div className="col-3">
-          <label>Product Size</label>
-          <select
-            name="size"
-            value={formData.size}
-            onChange={handleChange}
-            className="form-select"
-          >
-            <option value="">-- Select --</option>
-            <option>S</option>
-            <option>M</option>
-            <option>L</option>
-            <option>XL</option>
-          </select>
-        </div>
-        <div className="col-3">
-          <label>Product Rating</label>
-          <div>
-            <Rating
-              name="rating"
-              value={formData.rating}
-              onChange={(e, newValue) =>
-                setFormData({ ...formData, rating: newValue })
-              }
+        {/* Row 4 */}
+        <div className="row mb-3">
+          <div className="col-3">
+            <label>Size</label>
+            <select {...register("productSize")} className="form-select">
+              <option value="">-- Select --</option>
+              <option>S</option>
+              <option>M</option>
+              <option>L</option>
+              <option>XL</option>
+            </select>
+          </div>
+          <div className="col-3">
+            <label>Rating</label>
+            <Controller
+              name="productRating"
+              control={control}
+              render={({ field }) => (
+                <Rating {...field} value={field.value || 0} onChange={(_, value) => field.onChange(value)} />
+              )}
             />
           </div>
         </div>
-      </div>
 
-      {/* Row 5 - Media Upload */}
-      <div className="row mb-3">
-        <div className="col-6">
-          <label>Media & Images</label>
-          <input
-            type="file"
-            name="media"
-            multiple
-            onChange={handleChange}
-            className="form-control"
-          />
-
-          {/* Media Preview List */}
-          <div className="mt-3">
-            {formData.media.length > 0 &&
-              formData.media.map((file, index) => (
-                <div
-                  key={index}
-                  className="d-flex align-items-center mb-2 p-2 border rounded"
-                >
-                  {/* Agar image hai to preview */}
-                  {file.type.startsWith("image/") && (
-                    <img
-                      src={URL.createObjectURL(file)}
-                      alt="preview"
-                      width="50"
-                      height="50"
-                      className="me-2 rounded"
-                    />
-                  )}
-                  <span className="me-2">{file.name}</span>
-                  <button
-                    type="button"
-                    className="btn btn-sm btn-danger"
-                    onClick={() => handleDeleteFile(index)}
-                  >
-                    Delete
-                  </button>
-                </div>
-              ))}
+        {/* Media Upload */}
+        <div className="row mb-3">
+          <div className="col-6">
+            <label>Media & Images</label>
+            <input type="file" multiple onChange={handleFileChange} className="form-control" />
           </div>
         </div>
-      </div>
 
-      <div className="row mt-4">
-        <div className="col text-end">
-          <button className="btn btn-primary">Save Product</button>
+        <div className="row mt-4">
+          <div className="col text-end">
+            <button type="submit" className="btn btn-primary">Save Product</button>
+          </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 };

@@ -26,7 +26,7 @@ const productSchema=new mongoose.Schema({
     },
     productFeatured:{
         type:String,
-        emu:["Yes","No"],
+        enum:["Yes","No"],
         required:true
     },
     productBrand:{
@@ -43,7 +43,7 @@ const productSchema=new mongoose.Schema({
     },
     productSize:{
         type:String,
-        emu:["S","M","L","XL"],
+        enum:["S","M","L","XL"],
         required:false
     },
     productRating:{

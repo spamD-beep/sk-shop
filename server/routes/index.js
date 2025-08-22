@@ -19,5 +19,5 @@ router.get("/category/:id", getCategoryById);
 router.put("/category/:id", upload.array("media", 5), updateCategory);
 router.delete("/category/:id", deleteCategory);
 
-router.post("/product",upload.single("media"),addProduct);
+router.post("/product", upload.single("media"), addProduct);
 export default router;

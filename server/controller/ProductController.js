@@ -1,5 +1,6 @@
-import Product from "../model/ProductModel";
-import cloudinary from "../config/Cloudnary";
+import Product from "../model/ProductModel.js";
+import cloudinary from "../config/Cloudnary.js";
+import fs from "fs";
 export const addProduct=async (req,res)=> {
     try {
         const result= await cloudinary.uploader.upload(req.file.path,{
@@ -24,7 +25,7 @@ export const addProduct=async (req,res)=> {
       },
     });
 
-    await Product.save();
+    await newProduct.save();
 
     fs.unlinkSync(req.file.path);
     res.status(200).json({message:"Product Upload SuccessFully"})

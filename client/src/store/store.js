@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { SliderApi } from "../api/bannerApi";
 import { CategoryApi } from "../api/categoryApi";
-import { ProductApi } from "../api/productAli";
+import { ProductApi } from "../api/productApi";
 
 export const store = configureStore({
   reducer: {

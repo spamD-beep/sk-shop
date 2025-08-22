@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from "react-router-dom";   // ✅ Router se navigation
 import '../styles.css'
-import dashLogo from '../../assets/img/logo.png'
+import dashLogo from '../../assets/img/dashLo.png'
 import user from '../../assets/img/footer3.png'
 
 // Icons
@@ -76,8 +76,8 @@ const Header = ({ children }) => {
       <div className='row'>
         {/* Sidebar */}
         <div className={`col-2 ${open ? "aside" : "d-none"}`}>
-          <div className='logo py-3 text-center'>
-            <img src={dashLogo} style={{ width: "120px" }} alt="Logo" />
+          <div className='logo text-center'>
+            <img src={dashLogo} style={{ width: "200px" }} alt="Logo" />
           </div>
           <ul className="menu ul">
             {aside.map((item, index) => (

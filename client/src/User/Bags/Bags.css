@@ -73,6 +73,7 @@
 .cartBtn:hover {
   background: black;
   color:white;
+  border:none;
 }
 
 /* ✅ Responsive Design */
