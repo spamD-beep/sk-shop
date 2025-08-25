@@ -17,6 +17,9 @@ export const ProductApi = createApi({
         body: formData,
       }),
     }),
+    getAllProducts:builder.query({
+      query:()=>"/products"
+    })
   }),
 });
-export const { useAddProductMutation } = ProductApi;
+export const { useAddProductMutation,useGetAllProductsQuery } = ProductApi;

@@ -9,13 +9,20 @@ overflow-x: hidden;
   background-color: white;
 
 }
+
+.imgItem{
+  padding:0;
+}
 .proSwiper .promain{
-  display: flex;
-  background-color: white;
-  flex-direction: column;
+  justify-content: center !important;
+  align-items: center !important;
+  display: flex!important;
+  background-color: white !;
+  flex-direction: column !important;
   border-radius: 10px;
   align-items: start;
   box-shadow: 2px 2px 15px lightgray;
+  margin-right: 0;
 }
 
 .swiper-slide {
@@ -90,6 +97,16 @@ overflow-x: hidden;
   border-radius: 50%;
   background-color: white;
 }
+.product-description-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* 2 lines, aap 1.5 ke liye 2 try kar sakte ho */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.4em; /* ek line ka height */
+  max-height: 3em; /* 1.5 line ka approx height: 1.5 * 1.5 = 2.25em */
+}
+
 .popup-overlay {
   position: fixed;
   top: 0;

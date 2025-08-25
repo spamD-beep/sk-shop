@@ -22,6 +22,7 @@ const AddSubCategory = () => {
     const formData = new FormData();
     formData.append("productCategory", productCategory);
     formData.append("subCategoryName", data.subCategoryName);
+    formData.append("subCategoryPath", data.subCategoryPath); // 🆕 Path bhi send karna
 
     try {
       const response = await addSubCategory(formData).unwrap();
@@ -66,6 +67,17 @@ const AddSubCategory = () => {
             className="form-control"
             placeholder="Enter sub category name"
             {...register("subCategoryName", { required: true })}
+          />
+        </div>
+
+        {/* Sub Category Path (slug/URL) */}
+        <div className="mb-3">
+          <label className="form-label">Sub Category Path</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter sub category path (e.g. mobiles, laptops)"
+            {...register("subCategoryPath", { required: true })}
           />
         </div>
 

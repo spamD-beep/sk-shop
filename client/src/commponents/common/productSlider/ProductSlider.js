@@ -9,106 +9,16 @@ import { IoIosGitCompare } from "react-icons/io";
 import Rating from '@mui/material/Rating';
 import StarIcon from '@mui/icons-material/Star';
 import { Navigation } from 'swiper/modules';
+import { useGetAllProductsQuery } from '../../../api/productApi';
 
-import cat3 from '../../../assets/img/cat3.jpg';
-import cat4 from '../../../assets/img/cat4.jpg';
-import cat5 from '../../../assets/img/cat5.jpg';
-import cat6 from '../../../assets/img/cat6.jpg';
-import cat7 from '../../../assets/img/cat7.jpg';
-import cat8 from '../../../assets/img/cat8.jpg';
-import cat9 from '../../../assets/img/cat9.jpg';
 
 const ProductSlider = () => {
-  const [value, setValue] = useState(2); 
-  const [hover, setHover] = useState(-1);
+  const {data:product=[]}=useGetAllProductsQuery()
+  const JeweleryProduct=product.filter(p=>p.productRating === 5)  
+ const [selectedProduct, setSelectedProduct] = useState(null);
+   const [quantity, setQuantity] = useState(1);
+   const [selectedSize, setSelectedSize] = useState("M");
 
-  // ✅ Popup states
-  const [selectedProduct, setSelectedProduct] = useState(null);
-  const [quantity, setQuantity] = useState(1);
-  const [selectedSize, setSelectedSize] = useState("M");
-
-  const products = [
-    {
-      id: 1,
-      img: cat3,
-      discount: "10%",
-      brand: "Soylent Green",
-      title: "Siril Georgette Pink Color Saree with Blouse piece",
-      oldPrice: 50,
-      newPrice: 58
-    },
-    {
-      id: 2,
-      img: cat4,
-      discount: "20%",
-      brand: "Nike",
-      title: "Galaxy Smartwatch with Fitness Tracker",
-      oldPrice: 120,
-      newPrice: 95
-    },
-    {
-      id: 3,
-      img: cat5,
-      discount: "15%",
-      brand: "Adidas",
-     title: "Galaxy Smartwatch with Fitness Tracker",
-      oldPrice: 40,
-      newPrice: 32
-    },
-    {
-      id: 4,
-      img: cat6,
-      discount: "25%",
-      brand: "Samsung",
-      title: "Galaxy Smartwatch with Fitness Tracker",
-      oldPrice: 300,
-      newPrice: 225
-    },
-    {
-      id: 5,
-      img: cat7,
-      discount: "5%",
-      brand: "Apple",
-      title: "Galaxy Smartwatch with Fitness Tracker",
-      oldPrice: 1300,
-      newPrice: 1235
-    },
-    {
-      id: 6,
-      img: cat8,
-      discount: "30%",
-      brand: "Levi's",
-      title: "Galaxy Smartwatch with Fitness Tracker",
-      oldPrice: 150,
-      newPrice: 105
-    },
-    {
-      id: 7,
-      img: cat9,
-      discount: "18%",
-      brand: "Sony",
-      title: "Galaxy Smartwatch with Fitness Tracker",
-      oldPrice: 250,
-      newPrice: 205
-    }
-  ];
-
-  const labels = {
-    0.5: 'Useless',
-    1: 'Useless+',
-    1.5: 'Poor',
-    2: 'Poor+',
-    2.5: 'Ok',
-    3: 'Ok+',
-    3.5: 'Good',
-    4: 'Good+',
-    4.5: 'Excellent',
-    5: 'Excellent+',
-  };
-
-  function getLabelText(value) {
-    return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
-  }
 
   // ✅ Functions
   const handleClosePopup = () => setSelectedProduct(null);
@@ -125,15 +35,17 @@ const ProductSlider = () => {
         modules={[Navigation]}
         className="proSwiper"
       >
-        {products.map((product) => (
-          <SwiperSlide key={product.id} className="promain">
-            <div className='discount'>{product.discount}</div>
+        {JeweleryProduct.map((pro) => (
+          <SwiperSlide key={pro._id} className="promain">
+            <div className='discount'>{`${pro.productDiscount} %`}</div>
             <div className='imgItem'>
-              <img src={product.img} style={{ height: '100%', width: "100%" }} alt={product.title} />
+            <div style={{width:"100%",height:"200px",textAlign:"center"}}>
+              <img src={pro.image.url} style={{ height: '100%', width: "100%" }} />
+              </div>
               <div className='icons'>
                 <div 
                   style={{ width: "30px", height: "30px", textAlign: "center", background: "white", borderRadius: "50%", boxShadow: "1px 1px 15px gray" }}
-                  onClick={() => setSelectedProduct(product)}
+                  onClick={() => setSelectedProduct(pro)}
                 >
                   <MdOutlineZoomOutMap style={{ fontSize: "14pt", fontWeight: "600", cursor: "pointer" }} />
                 </div>
@@ -145,28 +57,20 @@ const ProductSlider = () => {
                 </div>
               </div>
             </div>
-            <div style={{ padding: "8px", display: "flex", flexDirection: "column", gap: "7px" }}>
-              <div style={{ color: 'gray', fontSize: '10pt' ,width:"100%" }}>{product.brand}</div>
-              <div style={{ color: 'black', fontSize: '10pt',width:"100%", padding: '0px' }}>
-                {product.title}
+            <div style={{ padding: "5px", paddingBottom: "10px", display: "flex", flexDirection: "column", gap: "2px" }}>
+              <div style={{ color: 'gray', fontSize: '10pt' }}>{pro.productBrand}</div>
+              <div style={{ color: 'black', fontSize: '10pt', padding: '0px' }} className='product-description-truncate'>
+                {pro.productDes}
               </div>
               <Rating
                 name="hover-feedback"
-                value={value}
+                value={pro.productRating}
                 precision={0.5}
-                getLabelText={getLabelText}
-                style={{ fontSize: "12pt" }}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
-                }}
-                onChangeActive={(event, newHover) => {
-                  setHover(newHover);
-                }}
                 emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
               />
               <div className='price' style={{ display: "flex", width: "100%", justifyContent: "space-between", gap: "10px" }}>
-                <div style={{ color: "gray", fontSize: "10pt", textDecoration: "line-through" }}>${product.oldPrice}</div>
-                <div style={{ color: "red", fontSize: "10pt" }}>${product.newPrice}</div>
+                <div style={{ color: "gray", fontSize: "10pt", textDecoration: "line-through" }}>${pro.productOldPrice}</div>
+                <div style={{ color: "red", fontSize: "10pt" }}>${pro.productPrice}</div>
               </div>
               <div className='addToCard' style={{ fontSize: "10pt", border: "1px solid red", padding: "10px", textAlign: "center", display: "flex", gap: "10px", justifyContent: "center" }}>
                 <svg
@@ -202,30 +106,30 @@ const ProductSlider = () => {
             
             <div className="popup-content">
               <div className="popup-image">
-                <img src={selectedProduct.img} alt={selectedProduct.title} />
+                <img src={selectedProduct.image.url}  />
               </div>
               
               <div className="popup-details">
-                <h2>{selectedProduct.title}</h2>
+                <h2>{selectedProduct.productName}</h2>
                 
                 <div className="brand-rating">
-                  <span className="brand">Brand: {selectedProduct.brand}</span>
+                  <span className="brand">Brand: {selectedProduct.productBrand}</span>
                   <span className="rating">★★★★★ <span className="review-count">(2)</span></span>
                 </div>
                 
                 <div className="pricing">
-                  <span className="current-price">${selectedProduct.newPrice}</span>
-                  <span className="original-price">${selectedProduct.oldPrice}</span>
-                  <span className="discount">({selectedProduct.discount} OFF)</span>
+                  <span className="current-price">${selectedProduct.productPrice}</span>
+                  <span className="original-price">${selectedProduct.productOldPrice}</span>
+                  <span className="discount">({`${selectedProduct.productDiscount}%`} OFF)</span>
                 </div>
                 
                 <div className="stock-info">
-                  <span className="in-stock">Available In Stock: 7469 items</span>
+                  <span className="in-stock">Available In Stock: {selectedProduct.productStock} items</span>
                 </div>
                 
                 <div className="product-description">
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    {selectedProduct.productDes}
                   </p>
                 </div>
                 

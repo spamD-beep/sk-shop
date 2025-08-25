@@ -26,6 +26,7 @@ const AddCategory = () => {
 
     const formData = new FormData();
     formData.append("categoryName", data.categoryName);
+    formData.append("categoryPath", data.categoryPath); // ✅ new field added
     mediaFiles.forEach((file) => formData.append("media", file));
 
     try {
@@ -52,6 +53,17 @@ const AddCategory = () => {
             className="form-control"
             placeholder="Enter category name"
             {...register("categoryName", { required: true })}
+          />
+        </div>
+
+        {/* ✅ Category Path */}
+        <div className="mb-3">
+          <label className="form-label">Category Path</label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter category path (e.g. /electronics)"
+            {...register("categoryPath", { required: true })}
           />
         </div>
 

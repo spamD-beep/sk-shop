@@ -2,7 +2,7 @@ import express from "express";
 import upload from "../middleware/multer.js";  
 import { deleteBanner, getBanners, uploadBanner, getBannerById, updateBanner } from "../controller/BannerController.js";
 import { addCategory, addSubCategory, getCategories, getAllCategories, getCategoryById, updateCategory, deleteCategory } from "../controller/CategoryController.js";
-import { addProduct } from "../controller/ProductController.js";
+import { addProduct, getAllProducts } from "../controller/ProductController.js";
 const router = express.Router();
 
 router.post("/banners", upload.single("media"), uploadBanner);
@@ -20,4 +20,5 @@ router.put("/category/:id", upload.array("media", 5), updateCategory);
 router.delete("/category/:id", deleteCategory);
 
 router.post("/product", upload.single("media"), addProduct);
+router.get("/products",getAllProducts)
 export default router;

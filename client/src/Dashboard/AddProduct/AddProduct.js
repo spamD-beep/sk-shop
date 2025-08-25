@@ -38,7 +38,7 @@ const AddProduct = () => {
 
   // 🔎 Subcategories filter
   const subCategories =
-    categories.find((cat) => cat._id === selectedCategory)?.subCategories || [];
+    categories.find((cat) => cat.categoryName === selectedCategory)?.subCategories || [];
 
   // 📌 Handle file input
   const handleFileChange = (e) => {
@@ -113,7 +113,7 @@ const AddProduct = () => {
             >
               <option value="">-- Select --</option>
               {categories.map((cat) => (
-                <option key={cat._id} value={cat._id}>
+                <option key={cat._id} value={cat.categoryName}>
                   {cat.categoryName}
                 </option>
               ))}

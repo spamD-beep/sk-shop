@@ -50,16 +50,9 @@ const App = () => {
         <Route path="/help-center" element={<Main><HelpCenter/></Main>} />
         <Route path="/my-list" element={<Main><MyList/></Main>} />
         <Route path="/adress" element={<Main><Address/></Main>} />
-        <Route path="/fashion" element={<Main><Category><Fashion/></Category></Main>} />
-        <Route path="/electronics" element={<Main><Category><Electrons/></Category></Main>} />
-        <Route path="/bags" element={<Main><Category><Bags/></Category></Main>} />
-        <Route path="/footwear" element={<Main><Category><Footwear/></Category></Main>} />
-        <Route path="/groceries" element={<Main><Category><Groceries/></Category></Main>} />
-        <Route path="/beauty" element={<Main><Category><Beauty/></Category></Main>} />
-        <Route path="/wellness" element={<Main><Category><Wellness/></Category></Main>} />
-        <Route path="/jewelery" element={<Main><Category><Jewelery/></Category></Main>} />
-        <Route path="/fashion" element={<Main><Category><Fashion/></Category></Main>} />
-        <Route path="/fashion" element={<Main><Category><Fashion/></Category></Main>} />
+        <Route path="/:category" element={<Main><Category/></Main>} />
+        <Route path="/:category/:subcategory" element={<Main><Category/></Main>} />
+
       </Routes>
       </BrowserRouter>
     </div>

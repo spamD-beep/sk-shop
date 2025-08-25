@@ -14,7 +14,7 @@ const productSchema=new mongoose.Schema({
     },
     productSubCat:{
         type:String,
-        required:true
+        required:false
     },
     productPrice:{
         type:Number,
