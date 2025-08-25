@@ -284,7 +284,7 @@ const Dashboard = () => {
             <IoMdAdd /> Add Product
           </Link>
         </div>
-        <div className="col-4">
+        <div className="col-4 bannerImg">
           <img src={dashBanner} height="250px" alt="dashboard banner" />
         </div>
       </div>

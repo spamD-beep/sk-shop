@@ -156,6 +156,11 @@
     background-color: white;
     height:270px;
 }
+.bannerImg{
+  display: flex;
+  
+  justify-content: center;
+}
 .chartRow{
     margin:0px 10px;
     display: flex;
