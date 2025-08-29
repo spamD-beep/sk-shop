@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from "react-router-dom";   // ✅ Router se navigation
+import { Link,useNavigate } from "react-router-dom";   // ✅ Router se navigation
 import '../styles.css'
 import dashLogo from '../../assets/img/dashLo.png'
 import user from '../../assets/img/footer3.png'
@@ -14,8 +14,10 @@ import { MdProductionQuantityLimits, MdDriveFolderUpload, MdOutlineCategory } fr
 import { FiPackage } from "react-icons/fi";
 import { FaRegListAlt } from "react-icons/fa";   // ✅ FaRegRectangleList replace
 import { TbCategoryPlus } from "react-icons/tb";
+import { IoIosLogOut } from "react-icons/io";
 
 const Header = ({ children }) => {
+  const navigate=useNavigate()
   const [open, setOpen] = useState(true);
   const [submenuOpen, setSubmenuOpen] = useState(null);
 
@@ -70,7 +72,11 @@ const Header = ({ children }) => {
       path: "/Orders"
     },
   ];
-
+    const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    navigate("/signin");  // logout ke baad signin pe bhej do
+  };
   return (
     <div className='container-fluid'>
       <div className='row'>
@@ -116,10 +122,13 @@ const Header = ({ children }) => {
                         </Link>
                       </li>
                     ))}
+                    
                   </ul>
                 )}
               </li>
+              
             ))}
+            <li style={{flexDirection:"row"}}><div onClick={handleLogout}><IoIosLogOut style={{ fontSize:"13pt",margin:"0px 4px"}}/> <span style={{fontSize:"10pt",color:"#333",fontWeight:"bold"}}>LOGOUT</span></div></li>
           </ul>
         </div>
 

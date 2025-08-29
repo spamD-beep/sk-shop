@@ -70,6 +70,7 @@ cursor: pointer;
     display: flex;
     justify-content: end;
     gap:10px;
+    align-items: center;
 }
 .login svg{
      color:rgb(66, 66, 66);

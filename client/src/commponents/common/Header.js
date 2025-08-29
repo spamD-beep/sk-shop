@@ -1,9 +1,12 @@
-import React from "react";
+import React,{useState} from "react";
 import "../../css/style.css";
 import Logo from "../../assets/img/LogoReal.jpg";
 import Nav from "./Nav.js";
 import { Link } from "react-router-dom";
+import Cart from "../Cart.js";
+import { FaUser } from "react-icons/fa";
 const Header = () => {
+   const [isCartOpen, setIsCartOpen] = useState(false);
   return (
     <>
       <div className="main">
@@ -67,10 +70,7 @@ const Header = () => {
               </svg>
             </div>
             <div className="col-3 login">
-              <a href="#" className="pe-2">
-                Login
-              </a>
-              <a href="#">Register</a>
+             <FaUser style={{ fontSize:"14pt",cursor:"pointer"}}/>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
@@ -107,6 +107,8 @@ const Header = () => {
               </svg>
               </Link>
               <svg
+              onClick={() => setIsCartOpen(true)}
+              style={{cursor:"pointer"}}
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="21"
@@ -126,6 +128,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+    <Cart isOpen={isCartOpen} onClose={() => setIsCartOpen(false)} />
       <Nav/>
     </>
   );
